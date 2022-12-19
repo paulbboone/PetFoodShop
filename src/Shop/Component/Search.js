@@ -25,8 +25,6 @@ function Search(props) {
         console.log(search)
 
         if (handlerSearch){
-
-            //Nếu người dùng đang nhập thì mình clear cái giây đó
             if (delaySearchTextTimeOut.current){
                 clearTimeout(delaySearchTextTimeOut.current)
             }
@@ -43,7 +41,7 @@ function Search(props) {
             <input 
                 className="form-control form-control-lg" 
                 type="text" 
-                placeholder="Enter Search Here!"
+                placeholder="Search Here..."
                 onChange={onChangeText}
                 value={search} />
         </div>

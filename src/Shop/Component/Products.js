@@ -30,7 +30,7 @@ function Products(props) {
 
     return (
         <div className="row">
-            {/* -------------Product----------------- */}
+            {/*Product*/}
             {
                 products && products.map(value => (
                     <div className="col-lg-4 col-sm-6 Section_Category" key={value._id}>
@@ -48,8 +48,7 @@ function Products(props) {
                                                 Add to cart
                                                             </Link>
                                         </li>
-                                        <li className="list-inline-item mr-0">
-                                            {/* Dùng Modal phải có href để nó hiện ra thằng đó và thuộc tính data-toggle="modal" để mở modal*/}
+                                        <li className="list-inline-item mr-0">                                      
                                             <a className="btn btn-sm btn-outline-dark" href={`#product_${value._id}`} data-toggle="modal">
                                                 <i className="fas fa-expand"></i>
                                             </a>
@@ -63,7 +62,7 @@ function Products(props) {
                     </div>
                 ))
             }
-            {/* -------------Product----------------- */}
+
         </div>
     );
 }

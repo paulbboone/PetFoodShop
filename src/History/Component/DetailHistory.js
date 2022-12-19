@@ -63,10 +63,9 @@ function DetailHistory(props) {
                 <table className="table">
                     <thead className="bg-light">
                         <tr className="text-center">
-                            <th className="border-0" scope="col"> <strong className="text-small text-uppercase">ID Product</strong></th>
-                            <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Image</strong></th>
+                            <th className="border-0" scope="col"> <strong className="text-small text-uppercase">ID</strong></th>
                             <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Name</strong></th>
-                            <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Price</strong></th>
+                            <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Cost</strong></th>
                             <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Count</strong></th>
                         </tr>
                     </thead>

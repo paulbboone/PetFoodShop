@@ -77,45 +77,34 @@ function Home(props) {
                         <div className="container py-5">
                             <div className="row px-4 px-lg-5">
                                 <div className="col-lg-6">
-                                    <p className="text-muted small text-uppercase mb-2">Popular Cat Food</p>
-                                    <h1 className="h2 text-uppercase mb-3">30% discount now</h1><a className="btn btn-dark" href="shop.html">More</a>
+                                    <h1 className="h2 text-uppercase mb-3"></h1><a className="btn btn-dark" href="shop.html">More</a>
                                 </div>
                             </div>
                         </div>
                     </section>
                     <section className="pt-5">
-                        <header className="text-center">
-                            <p className="small text-muted small text-uppercase mb-1">Carefully created collections</p>
-                            <h2 className="h5 text-uppercase mb-4">Browse our categories</h2>
+                        <header className="text-center">                            
+                            <h2 className="h5 mb-4 text-gray">Browse our categories</h2>
                         </header>
                         <div className="row">
-                            <div className="col-md-4 mb-4 mb-md-0">
+                            <div className="col-md-6 mb-10 mb-md-0">
                                 <Link className="category-item" to={'/shop'}>
                                     <img className="img-fluid" src={Image.img1} alt="" />
-                                    <strong className="category-item-title">Clothes</strong>
+                                    <strong className="category-item-title">Dry Food</strong>
                                 </Link>
                             </div>
-                            <div className="col-md-4 mb-4 mb-md-0">
+                            <div className="col-md-6 mb-10 mb-md-0">
                                 <Link className="category-item mb-4" to={'/shop'}>
                                     <img className="img-fluid" src={Image.img2} alt="" />
-                                    <strong className="category-item-title">Shoes</strong>
+                                    <strong className="category-item-title">Wet Food</strong>
                                 </Link>
-                                <Link className="category-item" to={'/shop'}>
-                                    <img className="img-fluid" src={Image.img3} alt="" />
-                                    <strong className="category-item-title">Watches</strong>
-                                </Link>
+                              
                             </div>
-                            <div className="col-md-4">
-                                <Link className="category-item" to={'/shop'}>
-                                    <img className="img-fluid" src={Image.img4} alt="" />
-                                    <strong className="category-item-title">Electronics</strong>
-                                </Link>
-                            </div>
+                         
                         </div>
                     </section>
                     <section className="py-5" id="section_product">
                         <header>
-                            <p className="small text-muted small text-uppercase mb-1">Made the hard way</p>
                             <h2 className="h5 text-uppercase mb-4">Top trending products</h2>
                         </header>
                         <div className="row">
@@ -162,8 +151,7 @@ function Home(props) {
                                                 <use xlinkHref="#delivery-time-1"></use>
                                             </svg>
                                             <div className="media-body text-left ml-3">
-                                                <h6 className="text-uppercase mb-1">Free shipping</h6>
-                                                <p className="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                                <h6 className="text-uppercase mb-1">Freeship Extra</h6>                                               
                                             </div>
                                         </div>
                                     </div>
@@ -175,8 +163,7 @@ function Home(props) {
                                                 <use xlinkHref="#helpline-24h-1"> </use>
                                             </svg>
                                             <div className="media-body text-left ml-3">
-                                                <h6 className="text-uppercase mb-1">24 x 7 service</h6>
-                                                <p className="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                                <h6 className="text-uppercase mb-1">24/7 Service</h6>                                          
                                             </div>
                                         </div>
                                     </div>
@@ -188,8 +175,7 @@ function Home(props) {
                                                 <use xlinkHref="#label-tag-1"> </use>
                                             </svg>
                                             <div className="media-body text-left ml-3">
-                                                <h6 className="text-uppercase mb-1">Festival offer</h6>
-                                                <p className="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                                <h6 className="text-uppercase mb-1">Special Offers</h6>                                              
                                             </div>
                                         </div>
                                     </div>
@@ -200,10 +186,6 @@ function Home(props) {
                     <section className="py-5">
                         <div className="container p-0">
                             <div className="row">
-                                <div className="col-lg-6 mb-3 mb-lg-0">
-                                    <h5 className="text-uppercase">Let's be friends!</h5>
-                                    <p className="text-small text-muted mb-0">Nisi nisi tempor consequat laboris nisi.</p>
-                                </div>
                                 <div className="col-lg-6">
                                     <form action="#">
                                         <div className="input-group flex-column flex-sm-row mb-3">

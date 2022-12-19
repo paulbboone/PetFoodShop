@@ -43,7 +43,7 @@ function ListCart(props) {
             return
         }
 
-        //Trước khi trả dữ liệu về component cha thì phải thay đổi biến count
+        //Trước khi trả dữ liệu về component cha -> thay đổi biến count
         const updateCount = parseInt(getCount) - 1
 
         onUpdateCount(getIdUser, getIdProduct, updateCount)
@@ -56,7 +56,7 @@ function ListCart(props) {
             return
         }
 
-        //Trước khi trả dữ liệu về component cha thì phải thay đổi biến count
+        //Trước khi trả dữ liệu về component cha -> thay đổi biến count
         const updateCount = parseInt(getCount) + 1
 
         onUpdateCount(getIdUser, getIdProduct, updateCount)
@@ -70,7 +70,7 @@ function ListCart(props) {
                     <tr className="text-center">
                         <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Image</strong></th>
                         <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Product</strong></th>
-                        <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Price</strong></th>
+                        <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Cost</strong></th>
                         <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Quantity</strong></th>
                         <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Total</strong></th>
                         <th className="border-0" scope="col"> <strong className="text-small text-uppercase">Remove</strong></th>

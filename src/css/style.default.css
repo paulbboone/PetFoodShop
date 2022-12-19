@@ -1,18 +1,4 @@
-/*
-=========================================
-=========================================
 
-   Boutique | Ecommerce bootstrap template
-
-=========================================
-========================================= */
-/*
-*
-* ==========================================
-* GENERAL
-* ==========================================
-*
-*/
 .text-small {
   font-size: 0.85rem !important;
 }
@@ -29,13 +15,7 @@ button:focus, button:active {
   outline: none;
 }
 
-/*
-*
-* ==========================================
-* NAVBAR
-* ==========================================
-*
-*/
+/* NAVBAR */
 .navbar {
   position: relative;
 }
@@ -103,28 +83,16 @@ button:focus, button:active {
   z-index: 999;
 }
 
-/*
-*
-* ==========================================
-* HERO
-* ==========================================
-*
-*/
+
 .hero {
   min-height: 30rem;
 }
 
-/*
-*
-* ==========================================
-* CATEGORY
-* ==========================================
-*
-*/
+/* CATEGORY */
 .category-item {
   display: block;
   position: relative;
-  color: #343a40;
+  color: #8b9150;
   transition: all 0.3s;
 }
 
@@ -151,13 +119,8 @@ button:focus, button:active {
   opacity: 0.7;
 }
 
-/*
-*
-* ==========================================
-* PRODUCT
-* ==========================================
-*
-*/
+/* PRODUCT */
+
 .product img {
   -webkit-filter: grayscale(40%);
   filter: grayscale(40%);
@@ -217,13 +180,7 @@ button:focus, button:active {
   z-index: 999;
 }
 
-/*
-*
-* ==========================================
-* PRODUCT MODAL
-* ==========================================
-*
-*/
+/* PRODUCT-MODAL */
 .product-view {
   min-height: 20rem;
 }
@@ -247,13 +204,7 @@ button:focus, button:active {
   outline: none;
 }
 
-/*
-*
-* ==========================================
-* FOOTER
-* ==========================================
-*
-*/
+/* FOOTER */
 .footer-link {
   font-size: 0.85rem;
   position: relative;
@@ -285,15 +236,8 @@ button:focus, button:active {
   opacity: 0;
 }
 
-/*
-* ===================================================
-*    Custom Bootstrapious Utils
-* ===================================================
-*/
-/*
-   Text utils
-   ------------------------
-*/
+
+/* Text  */
 .text-uppercase {
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -333,7 +277,6 @@ button:focus, button:active {
 
 /*
     Rounded corners - lg, sm
-   ------------------------
 */
 .rounded-lg {
   border-radius: 0;
@@ -347,9 +290,7 @@ button:focus, button:active {
   border-radius: 10rem;
 }
 
-/*
-    Responsive borders - border-[breakpoint]
-   ------------------------
+/* Responsive borders - border-[breakpoint]
 */
 .border {
   border: 1px solid #dee2e6 !important;
@@ -380,8 +321,7 @@ button:focus, button:active {
 }
 
 /*
-    Opacity helpers - .opacity-[1-9]
-    ------------------------
+    Opacity helpers - .opacity-[1-9
 */
 .opacity-1 {
   opacity: 0.1;
@@ -425,7 +365,6 @@ button:focus, button:active {
 
 /*
     Z-index helpers - .z-index-[10-50]
-    ------------------------
 */
 .z-index-10 {
   z-index: 10;
@@ -447,10 +386,8 @@ button:focus, button:active {
   z-index: 50;
 }
 
-/*
-     Letter spacing helpers - .letter-spacing-[0-5]
-    ------------------------
-*/
+/*     Letter spacing helpers - .letter-spacing-[0-5]
+ */
 .letter-spacing-0 {
   letter-spacing: 0 !important;
 }
@@ -476,8 +413,7 @@ button:focus, button:active {
 }
 
 /*
-     Colours and backgrounds
-    ------------------------
+     Colors & backgrounds
 */
 .text-hover-primary {
   transition: all 0.2s ease-in-out;

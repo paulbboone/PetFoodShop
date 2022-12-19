@@ -58,7 +58,7 @@ function Header(props) {
         <div className="container px-0 px-lg-3">
             <nav className="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
                 <Link className="navbar-brand" to={`/`}>
-                    <span className="font-weight-bold text-uppercase text-dark">Boutique</span>
+                    <span className="large text-uppercase font-weight-bold text-yellow ">Meo Food</span>
                 </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -69,9 +69,9 @@ function Header(props) {
                             <Link className="nav-link" to={`/`} 
                             style={active === 'Home' ? { color: '#dcb14a' } : {color: 'black'}} >Home</Link>
                         </li>
-                        <li className="nav-item" onClick={() => handlerActive('Shop')}>
-                            <Link className="nav-link" to={`/shop`} 
-                            style={active === 'Shop' ? { color: '#dcb14a' } : {color: 'black'}} >Shop</Link>
+                        <li className="nav-item" onClick={() => handlerActive('Products')}>
+                            <Link className="nav-link" to={`/Products`} 
+                            style={active === 'Products' ? { color: '#dcb14a' } : {color: 'black'}} >Products</Link>
                         </li>  
                     </ul>
                     <ul className="navbar-nav ml-auto">

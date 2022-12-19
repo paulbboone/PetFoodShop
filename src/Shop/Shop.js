@@ -12,13 +12,13 @@ function Shop(props) {
     const [products, setProducts] = useState([])
     const [temp, setTemp] = useState([])
 
-    //state dùng để sắp xếp sản phẩm
+    //state sắp xếp sản phẩm
     const [sort, setSort] = useState('default')
 
     //Tổng số trang
     const [totalPage, setTotalPage] = useState()
 
-    //Từng trang hiện tại
+    //trang hiện tại
     const [pagination, setPagination] = useState({
         page: '1',
         count: '9',
@@ -26,7 +26,7 @@ function Shop(props) {
         category: 'all'
     })
 
-    //Hàm nà dùng để lấy value từ component SortProduct truyền lên
+    //Hàm lấy value từ component SortProduct truyền lên
     const handlerChangeSort = (value) => {
         console.log("Value: ", value)
 
@@ -34,12 +34,12 @@ function Shop(props) {
     }
 
 
-    //Hàm này dùng để thay đổi state pagination.page
+    //Hàm thay đổi state pagination.page
     //Nó sẽ truyền xuống Component con và nhận dữ liệu từ Component con truyền lên
     const handlerChangePage = (value) => {
         console.log("Value: ", value)
 
-        //Sau đó set lại cái pagination để gọi chạy làm useEffect gọi lại API pagination
+        //set lại pagination để gọi chạy làm useEffect gọi lại API pagination
         setPagination({
             page: value,
             count: pagination.count,
@@ -48,8 +48,8 @@ function Shop(props) {
         })
     }
 
-    //Hàm này dùng để thay đổi state pagination.search
-    //Hàm này sẽ truyền xuống Component con và nhận dữ liệu từ Component con truyền lên
+    //Hàm thay đổi state pagination.search
+    //-> truyền xuống Component con và nhận dữ liệu từ Component con truyền lên
     const handlerSearch = (value) => {
         console.log("Value: ", value)
 
@@ -61,7 +61,7 @@ function Shop(props) {
         })
     }
 
-    //Hàm này dùng để thay đổi state pagination.category
+    //Hàm thay đổi state pagination.category
     const handlerCategory = (value) => {
         console.log("Value: ", value)
 
@@ -73,16 +73,15 @@ function Shop(props) {
         })
     }
 
-    //Gọi hàm useEffect tìm tổng số sản phẩm để tính tổng số trang
-    //Và nó phụ thuộc và state pagination
+    //Gọi hàm useEffect tìm tổng số sản phẩm để tính tổng số trang Và nó phụ thuộc và state pagination
     useEffect(() => {
 
         const fetchAllData = async () => {
 
             let response
 
-            // Nếu mà category === 'all' thì nó sẽ gọi hàm get tất cả sản phẩm
-            // Ngược lại thì nó sẽ gọi hàm pagination và phân loại sản phẩm
+            // Nếu category === 'all' thì gọi hàm get tất cả sản phẩm
+            // Ngược lại, gọi hàm pagination và phân loại sản phẩm
             if (pagination.category === 'all'){
 
                 response = await ProductAPI.getAPI()
@@ -149,12 +148,12 @@ function Shop(props) {
                 <div className="container">
                     <div className="row px-4 px-lg-5 py-lg-4 align-items-center">
                         <div className="col-lg-6">
-                            <h1 className="h2 text-uppercase mb-0">Shop</h1>
+                            <h1 className="h2 text-uppercase mb-0">Products</h1>
                         </div>
                         <div className="col-lg-6 text-lg-right">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb justify-content-lg-end mb-0 px-0">
-                                    <li className="breadcrumb-item active" aria-current="page">Shop</li>
+                                    <li className="breadcrumb-item active" aria-current="page">Products</li>
                                 </ol>
                             </nav>
                         </div>
@@ -188,12 +187,11 @@ function Shop(props) {
                                                     <li className="list-inline-item m-0"><i className="fas fa-star small text-warning"></i></li>
                                                 </ul>
                                                 <h2 className="h4">{value.name}</h2>
-                                                <p className="text-muted">${value.price}</p>
-                                                <p className="text-small mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
+                                                <p className="text-muted">${value.price}</p>                                                
                                                 <div className="row align-items-stretch mb-4">
                                                     <div className="col-sm-5 pl-sm-0 fix_addwish">
                                                         <a className="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0">
-                                                            <i className="far fa-heart mr-2"></i>Add Too Wish List</a>
+                                                            <i className="far fa-heart mr-2"></i>Add To Wish List</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,34 +211,23 @@ function Shop(props) {
                     <div className="row">
                         <div className="col-lg-3 order-2 order-lg-1">
                             <h5 className="text-uppercase mb-4">Categories</h5>
-                            <div className="py-2 px-4 bg-dark text-white mb-3"><strong className="small text-uppercase font-weight-bold">Fashion &amp; Acc</strong></div>
+                            <div className="py-2 px-4 bg-light mb-3"><strong className="small text-uppercase font-weight-bold">Dry Food</strong></div>
                             <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('all')}>All</a></li>
+                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('Freeze-Dried Meat')}>Freeze-Dried Meat</a></li>
+                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('Grain')}>Grain</a></li>
                             </ul>
-                            <div className="py-2 px-4 bg-light mb-3"><strong className="small text-uppercase font-weight-bold">Clothes</strong></div>
+                            <div className="py-2 px-4 bg-light mb-3"><strong className="small text-uppercase font-weight-bold">Wet Food</strong></div>
                             <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('tshirt')}>T-Shirts</a></li>
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('pants')}>Pants</a></li>
+                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('Pate')}>Pate</a></li>
+                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('Canned Food')}>Canned Food</a></li>
                             </ul>
-                            <div className="py-2 px-4 bg-light mb-3"><strong className="small text-uppercase font-weight-bold">Health &amp; Beauty</strong></div>
-                            <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('sneaker')}>Sneaker</a></li>
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('watch')}>Watch</a></li>
-                            </ul>
-                            <div className="py-2 px-4 bg-light mb-3"><strong className="small text-uppercase font-weight-bold">Electronics</strong></div>
-                            <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal mb-5">
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('headphone')}>Headphones</a></li>
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('camera')}>Camera</a></li>
-                                <li className="mb-2"><a className="reset-anchor" href="#" onClick={() => handlerCategory('keyboard')}>Keyboard</a></li>
-                            </ul>
+                      
                         </div>
                         <div className="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
                             <div className="row mb-3 align-items-center">
 
                                 {/* ------------------Search----------------- */}
                                 <Search handlerSearch={handlerSearch} />
-                                {/* ------------------Search----------------- */}
-
                                 <div className="col-lg-8">
                                     <ul className="list-inline d-flex align-items-center justify-content-lg-end mb-0">
                                         <li className="list-inline-item">

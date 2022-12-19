@@ -14,7 +14,7 @@ function Detail(props) {
 
     const dispatch = useDispatch()
 
-    //id params cho từng sản phẩm
+    //id param cho từng sản phẩm
     const { id } = useParams()
 
     //id_user được lấy từ redux
@@ -32,14 +32,13 @@ function Detail(props) {
     // id_user đã đăng nhập
     const idUser = useSelector(state => state.Session.idUser)
 
-    // Listcomment
     const [list_comment, set_list_comment] = useState([])
 
-    // state này dùng để load lại comment khi user gửi comment lên
+    // load lại comment khi user gửi comment lên
     const [load_comment, set_load_comment] = useState(false)
 
-    // Hàm này dùng để lấy dữ liệu comment
-    // Hàm này sẽ chạy lại phụ thuộc vào id Param
+    // Hàm lấy dữ liệu comment
+    // vaf chạy lại phụ thuộc vào id Param
     useEffect(() => {
 
         const fetchData = async () => {
@@ -76,12 +75,12 @@ function Detail(props) {
 
     }
 
-    // Hàm này dùng để bình luận
+    // Hàm này dùng để comment
     const handlerComment = () => {
 
         if (idUser === ''){
             alertify.set('notifier','position', 'bottom-left');
-            alertify.error('Vui Lòng Kiểm Tra Đăng Nhập!');
+            alertify.error('Please check again!');
             return
         }
 
@@ -111,8 +110,8 @@ function Detail(props) {
     }
 
 
-    // Hàm này dùng để load lại dữ liệu comment
-    // Phụ thuộc vào state load_comment
+    // Hàm load lại dữ liệu comment
+    // vaf phụu thuộc vào state load_comment
     useEffect(() => {
 
         if (load_comment){
@@ -140,14 +139,13 @@ function Detail(props) {
     }, [load_comment])
 
 
-    //Hàm này gọi API và cắt chỉ lấy 4 sản phẩm
     useEffect(() => {
 
         const fetchData = async () => {
 
             const response = await ProductAPI.getAPI()
 
-            const data = response.splice(0, 4)
+            const data = response.splice(0, 5)
 
             setProduct(data)
 
@@ -181,7 +179,7 @@ function Detail(props) {
         setText(value)
     }
 
-    //Hàm này để lấy dữ liệu chi tiết sản phẩm
+    //Hàmlấy dữ liệu chi tiết sản phẩm
     useEffect(() => {
 
         const fetchData = async () => {
@@ -197,14 +195,14 @@ function Detail(props) {
     }, [id])
 
 
-    //Phần này dùng để xem review hay description
+    //xem review hay description
     const [review, setReview] = useState('description')
     const handlerReview = (value) => {
         setReview(value)
     }
 
 
-    //Hàm này là Thêm Sản Phẩm
+    //Thêm Sản Phẩm
     const addToCart = () => {
 
         let id_user_cart = ''
@@ -230,7 +228,7 @@ function Detail(props) {
 
         if (sessionStorage.getItem('id_user')) {
 
-            console.log("Bạn Đã Đăng Nhập!")
+            console.log("You already logged in!")
 
             const fetchPost = async () => {
 
@@ -258,7 +256,7 @@ function Detail(props) {
         }
 
         alertify.set('notifier', 'position', 'bottom-left');
-        alertify.success('Bạn Đã Thêm Hàng Thành Công!');
+        alertify.success('Successfully add to cart!');
     }
 
 
@@ -313,7 +311,6 @@ function Detail(props) {
                         </ul>
                         <h1>{detail.name}</h1>
                         <p className="text-muted lead">${detail.price}</p>
-                        <p className="text-small mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
                         <div className="row align-items-stretch mb-4">
                             <div className="col-sm-5 pr-sm-0">
                                 <div className="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
@@ -383,7 +380,6 @@ function Detail(props) {
                             <div className="tab-pane fade show active">
                                 <div className="p-4 p-lg-5 bg-white">
                                     <h6 className="text-uppercase">Product description </h6>
-                                    <p className="text-muted text-small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 </div>
                             </div>
                         ) : (<div className="tab-pane fade show active">
@@ -414,32 +410,9 @@ function Detail(props) {
                             </div>
                         </div>)
                     }
+                </div>                   
                 </div>
-                <h2 className="h5 text-uppercase mb-4">Related products</h2>
-                <div className="row">
-                    {
-                        product && product.map(value => (
-                            <div className="col-lg-3 col-sm-6" key={value._id}>
-                                <div className="product text-center skel-loader">
-                                    <div className="d-block mb-3 position-relative">
-                                        <Link className="d-block" to={`/detail/${value._id}`}>
-                                            <img className="img-fluid w-100" src={value.img1} alt="..." />
-                                        </Link>
-                                        <div className="product-overlay">
-                                            <ul className="mb-0 list-inline">
-                                                <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark text-white"><i className="far fa-heart"></i></a></li>
-                                                <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-dark text-white">Add to cart</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <h6> <a className="reset-anchor" href="detail.html">Kui Ye Chen’s AirPods</a></h6>
-                                    <p className="small text-muted">$250</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
+          
         </section >
     );
 }
